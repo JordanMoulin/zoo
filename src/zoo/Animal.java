@@ -2,10 +2,8 @@ package zoo;
 
 public class Animal {
 	
-	String nom;
-	String type;
-	
-	/** Constructeur par défaut */
+	private String nom;
+	private String type;
 	
 	/** Constructeur avec paramètres */
 	public Animal(String nom, String type){
@@ -21,7 +19,7 @@ public class Animal {
 		this.type=type;
 	}
 	
-	/** Accesseur de l'attribut id */
+	/** Accesseurs */
 	public String getNom(){
 		return nom;
 	}
