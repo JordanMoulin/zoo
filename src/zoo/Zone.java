@@ -4,7 +4,6 @@ public class Zone {
 	private String nom;
 	private Animal[] animaux;
 	private Animal[] tempA;
-	private int compteur;
 	private int i;
 
 	/** Constructeur avec paramètres */
@@ -12,23 +11,7 @@ public class Zone {
 		this.nom=nom;
 		animaux=new Animal[0];
 	}
-	
-	/** Accesseurs */
-	public String nom() {
-		return nom;
-	}
-	public Animal[] getAnimaux() {
-		return animaux;
-	}
 
-	/** Mutateurs */
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-	public void setAnimaux(Animal animaux[]) {
-		this.animaux = animaux;
-	}
-	
 	/** Méthodes */
 	public void addAnimal(Animal animal){
 		tempA= new Animal[animaux.length+1];
@@ -41,7 +24,35 @@ public class Zone {
 			animaux[i]= tempA[i];
 		}
 	}
-	public int getNombre(){
-		return compteur;
+
+	public void lister() {
+		System.out.println("Zone : "+getNom()+", liste :");
+		for(Animal an:animaux){
+			System.out.println("\t"+an);
+		}
+	}
+	@Override
+	public String toString() {
+		String chaine="";
+		for(int i=0;i<animaux.length;i++){
+			chaine+=animaux[i];
+		}
+		return chaine;
+	}
+
+	/** Accesseurs */
+	public String getNom() {
+		return nom;
+	}
+	public Animal[] getAnimaux() {
+		return animaux;
+	}
+
+	/** Mutateurs */
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	public void setAnimaux(Animal animaux[]) {
+		this.animaux = animaux;
 	}
 }
